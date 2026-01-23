@@ -1,31 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <title>{{ .Title }} - {{ .Site.Title }}</title>
     <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-    <header>
-        <div class="breadcrumb">
-            <a href="/">~{{ .Site.Params.author }}</a> 
-            <span class="repo-name">/ {{ .Title }}</span> 
-            <span class="repo-type">[blog]</span>
-        </div>
-        <div class="meta">
-            最后提交: {{ .Date.Format "2006-01-02 15:04:05" }}
-        </div>
+    <header class="header">
+        <h1>{{ .Site.Title }}</h1>
+        <nav class="nav"><a href="/">← 返回主页</a></nav>
     </header>
-
-    <main class="content-box">
+    <main>
         <article>
-            {{ .Content }}
+            <h2>{{ .Title }}</h2>
+            <div class="meta" style="color: #888; margin-bottom: 1rem;">发布日期: {{ .Date.Format "2006-01-02" }}</div>
+            <div class="post-content">
+                {{ .Content }}
+            </div>
         </article>
     </main>
-
-    <footer style="margin-top: 5rem; color: #888; font-family: monospace; font-size: 0.8rem;">
-        <hr style="border: 0; border-top: 1px solid #eee; margin-bottom: 1rem;">
-        [git] generated via hugo on NixOS
-    </footer>
 </body>
 </html>

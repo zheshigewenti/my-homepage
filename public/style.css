@@ -1,39 +1,105 @@
-/* static/style.css */
+/* 全局基础设置 */
 body {
-    font-family: monospace; /* 强制全站使用等宽字体，保持黑客味 */
-    background: #fff;
-    color: #333;
-    max-width: 900px;
+    font-family: monospace; /* 核心：强制等宽字体，保持黑客味 */
+    line-height: 1.5;
+    color: #222;
+    background-color: #fff;
+    max-width: 800px;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 2rem 1rem;
 }
 
-/* 标志性的蓝色链接 */
-a { color: #0044bb; text-decoration: none; }
-a:hover { text-decoration: underline; }
+/* 链接颜色：复刻你给的截图中的蓝色 */
+a { 
+    text-decoration: none; 
+    color: #0055aa; 
+}
+a:hover { 
+    text-decoration: underline; 
+}
 
-.breadcrumb { font-size: 1.2rem; font-weight: bold; margin-bottom: 0.5rem; }
-.repo-type { color: #888; font-weight: normal; margin-left: 5px; }
-
-.meta { 
-    font-size: 0.85rem; 
-    color: #666; 
-    border-bottom: 1px solid #ddd; 
-    padding-bottom: 1rem;
+/* 顶部 Header 样式 */
+.header {
+    border-bottom: 2px solid #eee;
     margin-bottom: 2rem;
+    padding-bottom: 1rem;
 }
 
-/* 让 Markdown 里的图片和代码块也符合风格 */
-article img { max-width: 100%; border: 1px solid #ddd; }
-article pre { 
-    background: #f8f8f8; 
-    padding: 1rem; 
-    border: 1px solid #ddd; 
-    overflow-x: auto; 
+.header h1 { 
+    margin: 0; 
+    font-size: 1.5rem; 
 }
-article code { background: #eee; padding: 2px 4px; }
 
-/* 专门为博客列表设计的表格样式 */
-.post-list { width: 100%; border-collapse: collapse; }
-.post-list td { padding: 8px 0; border-bottom: 1px dotted #eee; }
-.date-col { width: 120px; color: #888; }
+.nav { 
+    margin-top: 0.5rem; 
+}
+
+.nav a { 
+    margin-right: 1rem; 
+    font-weight: bold; 
+}
+
+/* 重点修改：缩小 section 标题（如“活跃博文”）的字号 */
+section {
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+section h2 { 
+    font-size: 0.85rem;  /* 这里已经改小了，非常紧凑 */
+    margin-top: 0; 
+    margin-bottom: 0.8rem;
+    color: #666;        /* 灰色标题，更显高级 */
+    font-weight: bold;
+    text-transform: none; 
+}
+
+/* 博文列表样式：左右分布，字号也同步缩小 */
+.project-list { 
+    list-style: none; 
+    padding: 0; 
+    margin: 0;
+}
+
+.project-item { 
+    display: flex; 
+    justify-content: space-between; 
+    margin-bottom: 0.5rem; 
+    font-size: 0.9rem;   /* 列表文字也改成了 0.9 */
+}
+
+.project-desc { 
+    color: #888; 
+    font-size: 0.85rem; 
+}
+
+/* 标签样式 */
+.status-tag {
+    padding: 1px 4px;
+    background: #eee;
+    font-size: 0.75rem;
+    color: #666;
+    margin-left: 4px;
+    border: 1px solid #ddd;
+}
+
+/* 代码块/状态栏样式 */
+.code-block {
+    background: #f4f4f4;
+    padding: 1rem;
+    overflow-x: auto;
+    font-size: 0.85rem;
+    border: 1px solid #ddd;
+}
+
+/* 深色模式自动适配 */
+@media (prefers-color-scheme: dark) {
+    body { background-color: #1c1c1c; color: #ddd; }
+    a { color: #88ccff; }
+    .header, section { border-color: #333; }
+    .status-tag { background: #333; color: #aaa; border-color: #444; }
+    .project-desc { color: #777; }
+    .code-block { background: #252525; border-color: #333; }
+    section h2 { color: #999; }
+}

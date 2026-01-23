@@ -1,44 +1,46 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ .Site.Title }}</title>
     <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-    <header>
-        <div class="breadcrumb">
-            <a href="/">~{{ .Site.Params.author }}</a> / 
-            <span style="font-weight: normal; color: #888;">blog</span>
-        </div>
-        <div class="meta">
-            {{ .Site.Title }} - 记录 NixOS 实战与思考
-        </div>
+    <header class="header">
+        <h1>vincent homepage</h1>
+        <nav class="nav">
+            <a href="/">主页</a>
+            <a href="/posts">目录</a>
+            <a href="mailto:your-email@example.com">邮件</a>
+        </nav>
     </header>
 
     <main>
-        <table>
-            <thead>
-                <tr>
-                    <th>标题</th>
-                    <th>类型</th>
-                    <th>发布日期</th>
-                </tr>
-            </thead>
-            <tbody>
+        <section id="projects">
+            <h2>活跃博文</h2>
+            <ul class="project-list">
                 {{ range (where .Site.RegularPages "Section" "posts") }}
-                <tr>
-                    <td><a href="{{ .Permalink }}">{{ .Title }}.md</a></td>
-                    <td style="color: #666; font-family: monospace;">100644</td>
-                    <td style="color: #666; font-family: monospace;">{{ .Date.Format "2006-01-02" }}</td>
-                </tr>
+                <li class="project-item">
+                    <span>
+                        <a href="{{ .Permalink }}">{{ .File.TranslationBaseName }}.md</a> 
+                        <span class="status-tag">git</span>
+                    </span>
+                    <span class="project-desc">{{ .Date.Format "2006-01-02" }}</span>
+                </li>
                 {{ end }}
-            </tbody>
-        </table>
-    </main>
+            </ul>
+        </section>
 
-    <footer style="margin-top: 4rem; font-size: 0.8rem; color: #999; font-family: monospace;">
-        生成的静态页面由 Hugo 驱动
-    </footer>
+        <section id="status">
+            <h2>网关状态 (VLAN 11)</h2>
+            <div class="code-block">
+$ ploam_status
+Status: O5 (Operational)
+$ pppoe-client status
+Interface: vlan11-internet
+            </div>
+        </section>
+    </main>
 </body>
 </html>

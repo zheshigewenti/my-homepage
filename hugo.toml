@@ -1,6 +1,6 @@
 baseURL = 'https://zheshigewenti.github.io/my-homepage/'
 languageCode = 'zh-CN'
-title = 'sr.ht'
+title = 'vincent.homepage'
 
 [params]
     author = "vincent"  # 移到这里

@@ -1,44 +1,47 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
 	<meta name="generator" content="Hugo 0.154.5"><script src="/my-homepage/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=my-homepage/livereload" data-no-instant defer></script>
     <meta charset="UTF-8">
-    <title>sr.ht</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vincent.homepage</title>
     <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-    <header>
-        <div class="breadcrumb">~vincent</div>
-        <div class="meta">
-            Blog 
-        </div>
+    <header class="header">
+        <h1>vincent homepage</h1>
+        <nav class="nav">
+            <a href="/">主页</a>
+            <a href="/posts">目录</a>
+            <a href="mailto:your-email@example.com">邮件</a>
+        </nav>
     </header>
 
     <main>
-        <div style="background: #f4f4f4; padding: 5px 10px; border: 1px solid #ddd; font-weight: bold; font-family: monospace;">
-            Blog Posts
-        </div>
-        
-        <table style="width: 100%; border-collapse: collapse; font-family: monospace;">
-            <thead>
-                <tr style="text-align: left;">
-                    <th style="padding: 8px; border-bottom: 2px solid #eee; width: 150px;">Date</th>
-                    <th style="padding: 8px; border-bottom: 2px solid #eee;">Title</th>
-                </tr>
-            </thead>
-            <tbody>
+        <section id="projects">
+            <h2>活跃博文</h2>
+            <ul class="project-list">
                 
-                <tr>
-                    <td style="padding: 8px; border-bottom: 1px solid #eee; color: #666;">
-                        2026-01-23
-                    </td>
-                    <td style="padding: 8px; border-bottom: 1px solid #eee;">
-                        <a href="http://localhost:1313/my-homepage/posts/nixos-config/">nixos-config</a>
-                    </td>
-                </tr>
+                <li class="project-item">
+                    <span>
+                        <a href="http://localhost:1313/my-homepage/posts/nixos-config/">nixos-config.md</a> 
+                        <span class="status-tag">git</span>
+                    </span>
+                    <span class="project-desc">2026-01-23</span>
+                </li>
                 
-            </tbody>
-        </table>
+            </ul>
+        </section>
+
+        <section id="status">
+            <h2>网关状态 (VLAN 11)</h2>
+            <div class="code-block">
+$ ploam_status
+Status: O5 (Operational)
+$ pppoe-client status
+Interface: vlan11-internet
+            </div>
+        </section>
     </main>
 </body>
 </html>

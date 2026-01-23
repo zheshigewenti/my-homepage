@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on sr.ht</title>
+    <title>Posts on vincent.homepage</title>
     <link>http://localhost:1313/my-homepage/posts/</link>
-    <description>Recent content in Posts on sr.ht</description>
+    <description>Recent content in Posts on vincent.homepage</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
     <lastBuildDate>Fri, 23 Jan 2026 00:00:00 +0000</lastBuildDate>
@@ -13,7 +13,7 @@
       <link>http://localhost:1313/my-homepage/posts/nixos-config/</link>
       <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/my-homepage/posts/nixos-config/</guid>
-      <description>&lt;p&gt;我的 NixOS 生产环境配置。&lt;/p&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th style=&#34;text-align: left&#34;&gt;文件名&lt;/th&gt;&#xA;          &lt;th style=&#34;text-align: left&#34;&gt;模式&lt;/th&gt;&#xA;          &lt;th style=&#34;text-align: left&#34;&gt;大小&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;&lt;a href=&#34;#&#34;&gt;configuration.nix&lt;/a&gt;&lt;/td&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;100644&lt;/td&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;4.2 KiB&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;&lt;a href=&#34;#&#34;&gt;hardware.nix&lt;/a&gt;&lt;/td&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;100644&lt;/td&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;1.8 KiB&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;&lt;a href=&#34;#&#34;&gt;network.ros&lt;/a&gt;&lt;/td&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;100755&lt;/td&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;850 B&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;</description>
+      <description>&lt;p&gt;我的 NixOS 生产环境配置。&lt;/p&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th style=&#34;text-align: left&#34;&gt;文件名&lt;/th&gt;&#xA;          &lt;th style=&#34;text-align: left&#34;&gt;模式&lt;/th&gt;&#xA;          &lt;th style=&#34;text-align: left&#34;&gt;大小&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;&lt;a href=&#34;#&#34;&gt;configuration.nix&lt;/a&gt;&lt;/td&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;100644&lt;/td&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;4.2 KiB&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;&lt;a href=&#34;#&#34;&gt;hardware.nix&lt;/a&gt;&lt;/td&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;100644&lt;/td&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;1.8 KiB&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;</description>
     </item>
   </channel>
 </rss>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{{ .Site.Title }}</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header>
+        <div class="breadcrumb">~{{ .Site.Author.name | default "vincent" }}</div>
+        <div class="meta">
+            全栈工程师的 NixOS 笔记与项目
+        </div>
+    </header>
+
+    <main>
+        <table>
+            <thead>
+                <tr>
+                    <th>项目名称</th>
+                    <th>类型</th>
+                    <th>描述</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{ range .Pages }}
+                <tr>
+                    <td><a href="{{ .Permalink }}">{{ .Title }}</a></td>
+                    <td><span style="background:#eee; padding:0 4px; font-size:0.8rem;">git</span></td>
+                    <td style="color:#666">{{ .Summary | truncate 50 }}</td>
+                </tr>
+                {{ end }}
+            </tbody>
+        </table>
+    </main>
+</body>
+</html>

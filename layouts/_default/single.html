@@ -8,7 +8,7 @@
 <body>
     <header>
         <div class="breadcrumb">
-            <a href="/">~{{ .Site.Author.name | default "vincent" }}</a> / {{ .Title }} 
+            <a href="/">~{{ .Site.Params.name | default "vincent" }}</a> / {{ .Title }} 
             <span style="font-weight: normal; color: #888;">[git]</span>
         </div>
         <div class="meta">

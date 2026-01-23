@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="UTF-8">
-    <title>{{ .Site.Title }}</title>
+    <title>sr.ht</title>
     <link rel="stylesheet" href="/style.css">
 </head>
 <body>
     <header>
-        <div class="breadcrumb">~{{ .Site.Params.name | default "vincent" }}</div>
+        <div class="breadcrumb">~vincent</div>
         <div class="meta">
             全栈工程师的 NixOS 笔记与项目
         </div>
@@ -23,13 +23,17 @@
                 </tr>
             </thead>
             <tbody>
-                {{ range .Pages }}
+                
                 <tr>
-                    <td><a href="{{ .Permalink }}">{{ .Title }}</a></td>
+                    <td><a href="http://localhost:1313/posts/nixos-config/">nixos-config</a></td>
                     <td><span style="background:#eee; padding:0 4px; font-size:0.8rem;">git</span></td>
-                    <td style="color:#666">{{ .Summary | truncate 50 }}</td>
+                    <td style="color:#666"><p>我的 NixOS 生产环境配置。</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">文件名 …</th></tr></thead></table></td>
                 </tr>
-                {{ end }}
+                
             </tbody>
         </table>
     </main>

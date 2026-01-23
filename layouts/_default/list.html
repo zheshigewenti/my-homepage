@@ -7,9 +7,9 @@
 </head>
 <body>
     <header>
-        <div class="breadcrumb">~{{ .Site.Params.name | default "vincent" }}</div>
+        <div class="breadcrumb">~{{ .Site.Params.author }}</div>
         <div class="meta">
-            全栈工程师的 NixOS 笔记与项目
+            全栈工程师的 NixOS 笔记与项目仓库
         </div>
     </header>
 
@@ -17,8 +17,8 @@
         <table>
             <thead>
                 <tr>
-                    <th>项目名称</th>
-                    <th>类型</th>
+                    <th>项目 / 笔记</th>
+                    <th>状态</th>
                     <th>描述</th>
                 </tr>
             </thead>
@@ -26,12 +26,18 @@
                 {{ range .Pages }}
                 <tr>
                     <td><a href="{{ .Permalink }}">{{ .Title }}</a></td>
-                    <td><span style="background:#eee; padding:0 4px; font-size:0.8rem;">git</span></td>
-                    <td style="color:#666">{{ .Summary | truncate 50 }}</td>
+                    <td><span style="color: #666;">[git]</span></td>
+                    <td style="color: #444;">{{ .Summary | truncate 60 }}</td>
                 </tr>
                 {{ end }}
             </tbody>
         </table>
     </main>
+
+    <footer>
+        <p style="margin-top: 3rem; font-size: 0.8rem; color: #888;">
+            最后构建于: {{ now.Format "2006-01-02 15:04:05" }}
+        </p>
+    </footer>
 </body>
 </html>

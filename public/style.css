@@ -1,6 +1,6 @@
 /* 全局基础设置 */
 body {
-    font-family: monospace; /* 核心：强制等宽字体，保持黑客味 */
+    font-family: monospace; /* 强制使用等宽字体 */
     line-height: 1.5;
     color: #222;
     background-color: #fff;
@@ -9,7 +9,7 @@ body {
     padding: 2rem 1rem;
 }
 
-/* 链接颜色：复刻你给的截图中的蓝色 */
+/* 链接：深蓝色且无下划线 */
 a { 
     text-decoration: none; 
     color: #0055aa; 
@@ -18,7 +18,7 @@ a:hover {
     text-decoration: underline; 
 }
 
-/* 顶部 Header 样式 */
+/* 顶部 Header */
 .header {
     border-bottom: 2px solid #eee;
     margin-bottom: 2rem;
@@ -39,7 +39,7 @@ a:hover {
     font-weight: bold; 
 }
 
-/* 重点修改：缩小 section 标题（如“活跃博文”）的字号 */
+/* Section 标题（如“活跃博文”） */
 section {
     margin-bottom: 2rem;
     padding-bottom: 1rem;
@@ -47,31 +47,34 @@ section {
 }
 
 section h2 { 
-    font-size: 0.85rem;  /* 这里已经改小了，非常紧凑 */
+    /* 修正点：必须加上 rem 或 px 单位。0.85rem 约等于 13.6px */
+    font-size: 0.85rem !important;  
     margin-top: 0; 
-    margin-bottom: 0.8rem;
-    color: #666;        /* 灰色标题，更显高级 */
+    margin-bottom: 1rem;
+    color: #666; 
     font-weight: bold;
-    text-transform: none; 
 }
 
-/* 博文列表样式：左右分布，字号也同步缩小 */
+/* 核心修改：博文列表左右对齐 */
 .project-list { 
-    list-style: none; 
+    list-style: none; /* 彻底移除圆点 */
     padding: 0; 
     margin: 0;
 }
 
 .project-item { 
     display: flex; 
-    justify-content: space-between; 
-    margin-bottom: 0.5rem; 
-    font-size: 0.9rem;   /* 列表文字也改成了 0.9 */
+    justify-content: space-between; /* 关键：文件名靠左，meta 靠右 */
+    align-items: center;
+    margin-bottom: 0.6rem; 
+    font-size: 0.9rem;
 }
 
-.project-desc { 
-    color: #888; 
-    font-size: 0.85rem; 
+/* 靠右的内容容器 */
+.project-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* 标签和日期之间的间距 */
 }
 
 /* 标签样式 */
@@ -80,11 +83,17 @@ section h2 {
     background: #eee;
     font-size: 0.75rem;
     color: #666;
-    margin-left: 4px;
     border: 1px solid #ddd;
 }
 
-/* 代码块/状态栏样式 */
+/* 日期样式 */
+.project-desc { 
+    color: #888; 
+    font-size: 0.85rem; 
+    white-space: nowrap; /* 保证日期不换行 */
+}
+
+/* 状态栏代码块 */
 .code-block {
     background: #f4f4f4;
     padding: 1rem;
@@ -101,5 +110,5 @@ section h2 {
     .status-tag { background: #333; color: #aaa; border-color: #444; }
     .project-desc { color: #777; }
     .code-block { background: #252525; border-color: #333; }
-    section h2 { color: #999; }
+    section h2 { color: #999 !important; }
 }

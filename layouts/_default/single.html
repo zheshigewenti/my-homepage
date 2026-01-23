@@ -8,21 +8,24 @@
 <body>
     <header>
         <div class="breadcrumb">
-            <a href="/">~{{ .Site.Params.name | default "vincent" }}</a> / {{ .Title }} 
-            <span style="font-weight: normal; color: #888;">[git]</span>
+            <a href="/">~{{ .Site.Params.author }}</a> 
+            <span class="repo-name">/ {{ .Title }}</span> 
+            <span class="repo-type">[blog]</span>
         </div>
         <div class="meta">
-            最后更新: {{ .Date.Format "2006年1月2日" }}
+            最后提交: {{ .Date.Format "2006-01-02 15:04:05" }}
         </div>
     </header>
 
-    <main>
-        {{ .Content }}
+    <main class="content-box">
+        <article>
+            {{ .Content }}
+        </article>
     </main>
 
-    <footer>
-        <hr style="border:0; border-top:1px solid #eee; margin: 2rem 0;">
-        <p style="font-size: 0.8rem; color: #888;">生成的静态页面由 Hugo 驱动</p>
+    <footer style="margin-top: 5rem; color: #888; font-family: monospace; font-size: 0.8rem;">
+        <hr style="border: 0; border-top: 1px solid #eee; margin-bottom: 1rem;">
+        [git] generated via hugo on NixOS
     </footer>
 </body>
 </html>

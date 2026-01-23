@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{{ .Site.Title }}</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header>
+        <div class="breadcrumb">
+            <a href="/">~{{ .Site.Params.author }}</a> / 
+            <span style="font-weight: normal; color: #888;">blog</span>
+        </div>
+        <div class="meta">
+            {{ .Site.Title }} - 记录 NixOS 实战与思考
+        </div>
+    </header>
+
+    <main>
+        <table>
+            <thead>
+                <tr>
+                    <th>标题</th>
+                    <th>类型</th>
+                    <th>发布日期</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{ range (where .Site.RegularPages "Section" "posts") }}
+                <tr>
+                    <td><a href="{{ .Permalink }}">{{ .Title }}.md</a></td>
+                    <td style="color: #666; font-family: monospace;">100644</td>
+                    <td style="color: #666; font-family: monospace;">{{ .Date.Format "2006-01-02" }}</td>
+                </tr>
+                {{ end }}
+            </tbody>
+        </table>
+    </main>
+
+    <footer style="margin-top: 4rem; font-size: 0.8rem; color: #999; font-family: monospace;">
+        生成的静态页面由 Hugo 驱动
+    </footer>
+</body>
+</html>

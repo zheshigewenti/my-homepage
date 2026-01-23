@@ -9,4 +9,3 @@ date: 2026-01-23
 | :--- | :--- | :--- |
 | [configuration.nix](#) | 100644 | 4.2 KiB |
 | [hardware.nix](#) | 100644 | 1.8 KiB |
-| [network.ros](#) | 100755 | 850 B |

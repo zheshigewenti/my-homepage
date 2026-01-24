@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><script src="/my-homepage/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=my-homepage/livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+    <title> - vincent.homepage</title>
+    <link rel="stylesheet" href="/my-homepage/style.css">
+</head>
+<body>
+    <header class="header">
+        <h1>vincent.homepage</h1>
+        <nav class="nav"><a href="/">← 返回主页</a></nav>
+    </header>
+    <main>
+        <article>
+            <h2></h2>
+            <div class="meta" style="color: #888; margin-bottom: 1rem;">发布日期: 0001-01-01</div>
+            <div class="post-content">
+                <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e">##macos</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#安装homebrew</span>
+</span></span><span style="display:flex;"><span>/bin/bash -c <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>brew bundle dump      <span style="color:#75715e">#从当前包生成Brewfile</span>
+</span></span><span style="display:flex;"><span>brew bundle dump -f   <span style="color:#75715e">#覆盖当前Brewfile</span>
+</span></span><span style="display:flex;"><span>brew bundle           <span style="color:#75715e">#安装Brewfile里所有包</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##iwd</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#wifi</span>
+</span></span><span style="display:flex;"><span>iwctl
+</span></span><span style="display:flex;"><span>device list
+</span></span><span style="display:flex;"><span>station &lt;waln&gt; scan
+</span></span><span style="display:flex;"><span>staion &lt;wlan&gt; get-networks
+</span></span><span style="display:flex;"><span>station &lt;wlan&gt; connect &lt;wifi-ssid&gt;
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#dhcp</span>
+</span></span><span style="display:flex;"><span>cd /etc/iwd/main.conf
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>General<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>EnableNetworkConfiguration<span style="color:#f92672">=</span>true
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#dhcpcd</span>
+</span></span><span style="display:flex;"><span>dhcpcd &amp;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##wsl</span>
+</span></span><span style="display:flex;"><span>wsl.exe --shutdown
+</span></span><span style="display:flex;"><span>wsl --unregister arch <span style="color:#75715e">#注销该子系统，这才是完全卸载</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#disk&amp;wifiutils cfdisk iwd</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>timedatectl set-ntp true
+</span></span><span style="display:flex;"><span>cfdisk
+</span></span><span style="display:flex;"><span>mkfs.fat -F32 /dev/sda1
+</span></span><span style="display:flex;"><span>mkfs.ext4 /dev/sda3
+</span></span><span style="display:flex;"><span>mkswap /dev/sda2
+</span></span><span style="display:flex;"><span>mount /dev/sda3 /mnt
+</span></span><span style="display:flex;"><span>mkdir -p /mnt/boot/efi
+</span></span><span style="display:flex;"><span>mount /dev/sda1 /mnt/boot/efi/
+</span></span><span style="display:flex;"><span>swapon /dev/sda2
+</span></span><span style="display:flex;"><span>pacstrap /mnt base linux linux-firmware sudo grub efibootmgr networkmanager intel-ucode neovim
+</span></span><span style="display:flex;"><span>genfstab -U /mnt &gt;&gt; /mnt/etc/fstab
+</span></span><span style="display:flex;"><span>arch-chroot /mnt
+</span></span><span style="display:flex;"><span>ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+</span></span><span style="display:flex;"><span>hwclock --systohc
+</span></span><span style="display:flex;"><span>nvim /etc/locale.gen
+</span></span><span style="display:flex;"><span>locale-gen
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;LANG=en_US.UTF-8&#34;</span> &gt;&gt; /etc/locale.conf 
+</span></span><span style="display:flex;"><span>systemctl enable NetworkManager
+</span></span><span style="display:flex;"><span>useradd -m -G wheel vincent
+</span></span><span style="display:flex;"><span>passwd
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#archutils stow fd ctags ripgrep tmux unzip npm lf lazygit yay feh nmap wget openssh neovim</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sudo passwd root
+</span></span><span style="display:flex;"><span>su root
+</span></span><span style="display:flex;"><span>cd /etc/
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 配置清华源 出现问题可以重置包管理器密钥环pacman-key --init &amp;&amp; pacman-key --populate pacman -Sy archlinux-keyring &amp;&amp; pacman -Su</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;Server = https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch&#39;</span> &gt; /etc/pacman.d/mirrorlist
+</span></span><span style="display:flex;"><span>sudo pacman-key --lsign-key <span style="color:#e6db74">&#34;farseerfc@archlinux.org&#34;</span> <span style="color:#75715e">#本地信任farseerfc的GPG key</span>
+</span></span><span style="display:flex;"><span>sudo pacman-key --lsign-key <span style="color:#e6db74">&#34;lilac@build.archlinuxcn.org&#34;</span>  <span style="color:#75715e">#本地信任lilac的GPG key</span>
+</span></span><span style="display:flex;"><span>sudo pacman -S zsh
+</span></span><span style="display:flex;"><span>sudo chsh -s /bin/zsh vincent <span style="color:#75715e">#改变vincent的shell #重启wsl后开代理</span>
+</span></span><span style="display:flex;"><span>sudo pacman -Syyu
+</span></span><span style="display:flex;"><span>sudo pacman -S stow fd ctags ripgrep tmux unzip npm lf lazygit yay feh nmap wget openssh neovim github-cli git
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##git</span>
+</span></span><span style="display:flex;"><span>git clone https://github.com/zheshigewenti/dotfiles.git
+</span></span><span style="display:flex;"><span>gh auth login <span style="color:#75715e">#github-cli登录 注意保存github token</span>
+</span></span><span style="display:flex;"><span>git config --global user.name <span style="color:#e6db74">&#34;vincent&#34;</span> <span style="color:#75715e">#仓库内告知git用户为vincent</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##stow</span>
+</span></span><span style="display:flex;"><span>stow nvim <span style="color:#75715e">#利用stow将nvim配置链接到.config文件夹下</span>
+</span></span><span style="display:flex;"><span>stow -D <span style="color:#75715e">#取消相关软链接</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##tmux</span>
+</span></span><span style="display:flex;"><span>prefix键设置为C-a
+</span></span><span style="display:flex;"><span>prefix-| 左右分终端
+</span></span><span style="display:flex;"><span>prefix-- 上下分终端
+</span></span><span style="display:flex;"><span>prefix-d 分离当前终端
+</span></span><span style="display:flex;"><span>prefix-s 打开终端列表
+</span></span><span style="display:flex;"><span>prefix-x 关闭当前终端
+</span></span><span style="display:flex;"><span>tmux a    <span style="color:#75715e">#重新连接最近会话</span>
+</span></span><span style="display:flex;"><span>tmux a -t <span style="color:#75715e">#重新连接托管会话</span>
+</span></span><span style="display:flex;"><span>tmux new -s <span style="color:#75715e">#创建新会话会话</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##latex</span>
+</span></span><span style="display:flex;"><span>sudo pacman -S texlive-core texlive-langchinese
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##fonts</span>
+</span></span><span style="display:flex;"><span>noto-fonts
+</span></span><span style="display:flex;"><span>noto-fonts-cjk-sans   <span style="color:#75715e"># Google 中文黑体</span>
+</span></span><span style="display:flex;"><span>noto-fonts-cjk-serif  <span style="color:#75715e"># Google 中文宋体</span>
+</span></span><span style="display:flex;"><span>noto-fonts-color-emoji 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>gc <span style="color:#75715e">#neovim快速标注</span>
+</span></span><span style="display:flex;"><span>grep -rn &lt;file&gt; <span style="color:#75715e">#递归搜索文本且显示行数</span>
+</span></span><span style="display:flex;"><span>sed -i <span style="color:#e6db74">&#39;s/&lt;old&gt;/&lt;new&gt;/g&#39;</span> &lt;file&gt; <span style="color:#75715e">#全局替换文本</span>
+</span></span><span style="display:flex;"><span>:%/&lt;old&gt;/&lt;new&gt;/g <span style="color:#75715e">#vim中全局替换文本</span>
+</span></span><span style="display:flex;"><span>sudo tshark -i wlp0s20f3 -w 1.pcap -c <span style="color:#ae81ff">50</span> <span style="color:#75715e">#tshark抓包并保存到1.pcap</span>
+</span></span><span style="display:flex;"><span>tshark -r 1.pcap -T fields -e ip.dst | sort | uniq <span style="color:#75715e">#过滤1.pcap中重复ip</span>
+</span></span></code></pre></div>
+            </div>
+        </article>
+    </main>
+</body>
+</html>

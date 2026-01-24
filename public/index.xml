@@ -13,7 +13,7 @@
       <link>http://localhost:1313/my-homepage/posts/nixos-config/</link>
       <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/my-homepage/posts/nixos-config/</guid>
-      <description>&lt;p&gt;我的 NixOS 生产环境配置。&lt;/p&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th style=&#34;text-align: left&#34;&gt;文件名&lt;/th&gt;&#xA;          &lt;th style=&#34;text-align: left&#34;&gt;模式&lt;/th&gt;&#xA;          &lt;th style=&#34;text-align: left&#34;&gt;大小&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;&lt;a href=&#34;#&#34;&gt;configuration.nix&lt;/a&gt;&lt;/td&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;100644&lt;/td&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;4.2 KiB&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;&lt;a href=&#34;#&#34;&gt;hardware.nix&lt;/a&gt;&lt;/td&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;100644&lt;/td&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;1.8 KiB&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;</description>
+      <description>&lt;p&gt;我的 NixOS 生产环境配置。&#xA;无敌是多么寂寞无敌是多么空虚&#xA;到底要改到什么时候啊&#xA;真的好麻烦&#xA;为是那么不自动换页啊好奇怪&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;nix flake update&#xA;&lt;/code&gt;&lt;/pre&gt;</description>
     </item>
   </channel>
 </rss>

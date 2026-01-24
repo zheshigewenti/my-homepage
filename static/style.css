@@ -9,17 +9,22 @@ body {
     color: #000;
     background: #fff;
     max-width: 800px;
-    margin: 0 auto;
+    
+    /* --- 修改点：整体左偏 --- */
+    /* 原来是 0 auto (居中)，现在改为上下 0，左边留 5% 间距，右边自动填充 */
+    /* 5% 可以根据你的喜好调整，越小越靠左 */
+    margin: 0 auto 0 5% !important; 
+    
     padding: 2rem 1rem;
 }
 
 /* --- 导航栏 --- */
-header h1 {
+header h1, .header h1 {
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
 }
 
-nav a {
+nav a, .nav a {
     margin-right: 15px;
     text-decoration: none;
     color: blue;
@@ -28,7 +33,7 @@ nav a {
 /* --- 核心修改：字号缩小 --- */
 /* 针对“活跃博文”标题 */
 section h2 {
-    font-size: 0.85rem !important; /* 加上单位 rem，并强制执行 */
+    font-size: 0.85rem !important; 
     color: #666;
     margin-top: 2rem;
     margin-bottom: 1rem;
@@ -36,26 +41,79 @@ section h2 {
 }
 
 /* --- 列表对齐：文件名靠左，日期靠右 --- */
-ul {
-    list-style: none !important; /* 彻底移除圆点 */
-    padding: 0 !important;
-    margin: 0 !important;
+ul, .project-list {
+    list-style: none !important; 
+    padding: 0 !important; 
+    margin: 0 !important; 
 }
 
-/* 必须在 HTML 的 li 标签上写 class="post-item" */
-.post-item {
+/* 兼容你源码里的 .project-item */
+.post-item, .project-item {
     display: flex !important;
-    justify-content: space-between !important; /* 撑开两端 */
+    justify-content: space-between !important; 
     align-items: center;
     margin-bottom: 0.6rem;
 }
 
-.post-item a {
+.post-item a, .project-item a {
     text-decoration: none;
     color: blue;
 }
 
-.post-meta {
+/* 针对你源码中的日期和标签 */
+.project-desc, .post-meta {
     font-size: 0.85rem;
     color: #888;
+}
+
+.status-tag {
+    font-size: 0.7rem;
+    background: #eee;
+    padding: 1px 4px;
+    margin-left: 5px;
+}
+/* --- 保持博文页面的布局一致 --- */
+
+/* 1. 确保博文正文也遵循 body 的左偏规则 */
+article, .post-content {
+    max-width: 800px;
+    /* 已经继承了 body 的 margin-left: 5%，所以不需要重复写 */
+}
+
+/* 2. 博文页面的大标题，大小应该和主页标题协调 */
+article h1 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    color: #000;
+}
+
+/* 3. 正文里的 h2 也要变小（保持一致性） */
+article h2, .post-content h2 {
+    font-size: 0.85rem !important;
+    color: #666 !important;
+    margin-top: 2rem;
+    font-weight: bold;
+    border-bottom: 1px solid #eee; /* 给博文内的标题加条细线，更有黑客感 */
+    padding-bottom: 5px;
+}
+
+/* 4. 正文文字样式 */
+article p, .post-content p {
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 1.2rem;
+}
+
+/* 5. 代码块样式（NixOS 配置里经常有代码） */
+pre {
+    background: #f4f4f4;
+    padding: 1rem;
+    overflow-x: auto;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    border: 1px solid #ddd;
+}
+
+code {
+    font-family: monospace !important;
 }

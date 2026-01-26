@@ -6,8 +6,15 @@
     <description>Recent content on vincent.homepage</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sat, 24 Jan 2026 13:51:16 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 26 Jan 2026 16:54:48 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/my-homepage/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bandit</title>
+      <link>http://localhost:1313/my-homepage/posts/bandit/</link>
+      <pubDate>Mon, 26 Jan 2026 16:54:48 +0800</pubDate>
+      <guid>http://localhost:1313/my-homepage/posts/bandit/</guid>
+      <description>&lt;p&gt;ssh &lt;a href=&#34;mailto:bandit8@bandit.labs.overthewire.org&#34;&gt;bandit8@bandit.labs.overthewire.org&lt;/a&gt; -p 2220&#xA;find . -size 1033c&#xA;find . -size 33c -user bandit7 -readable 2&amp;gt;/dev/null   #屏蔽错误信息 1&amp;gt;/dev/null屏蔽正确信息&#xA;cat data.txt | grep millionth&#xA;cat data.txt | sort | uniq -u #sort排序 uniq过滤重复 -u指定唯一&#xA;strings data.txt | grep = #strings提取并显示长度超过4的人类可读字符串&#xA;cat data.txt | base64 -d #base64 -d解码为人类可读数据&#xA;cat data.txt | tr &amp;lsquo;A-Za-z&amp;rsquo; &amp;lsquo;N-ZA-Mn-za-m&amp;rsquo;&lt;/p&gt;&#xA;&lt;p&gt;7x16WNeHIi5YkIhWsfFIqoognUTyj9Q4&lt;/p&gt;</description>
+    </item>
     <item>
       <title>My New Post</title>
       <link>http://localhost:1313/my-homepage/posts/my-new-post/</link>

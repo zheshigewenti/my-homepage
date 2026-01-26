@@ -2,13 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/my-homepage/posts/nixos-config/</loc>
-    <lastmod>2026-01-23T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/my-homepage/posts/my-new-post/</loc>
+    <lastmod>2026-01-24T13:51:16+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/my-homepage/posts/</loc>
-    <lastmod>2026-01-23T00:00:00+00:00</lastmod>
+    <lastmod>2026-01-24T13:51:16+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/my-homepage/</loc>
+    <lastmod>2026-01-24T13:51:16+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/my-homepage/posts/nixos-config/</loc>
     <lastmod>2026-01-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/my-homepage/categories/</loc>

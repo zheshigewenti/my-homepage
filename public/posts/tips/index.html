@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head><script src="/my-homepage/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=my-homepage/livereload" data-no-instant defer></script>
     <meta charset="UTF-8">
-    <title>tips - vincent.homepage</title>
+    <title> - vincent.homepage</title>
     <link rel="stylesheet" href="/my-homepage/style.css">
 </head>
 <body>
@@ -12,95 +12,107 @@
     </header>
     <main>
         <article>
-            <h2>tips</h2>
-            <div class="meta" style="color: #888; margin-bottom: 1rem;">发布日期: 2026-01-24</div>
+            <h2></h2>
+            <div class="meta" style="color: #888; margin-bottom: 1rem;">发布日期: 0001-01-01</div>
             <div class="post-content">
-                <p>##macos</p>
-<p>#安装homebrew</p>
-<p>/bin/bash -c &ldquo;$(curl -fsSL <a href="https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)%22">https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&quot;</a></p>
-<p>brew bundle dump      #从当前包生成Brewfile</p>
-<p>brew bundle dump -f   #覆盖当前Brewfile</p>
-<p>brew bundle           #安装Brewfile里所有包</p>
-<p>##iwd</p>
-<p>#wifi</p>
-<p>iwctl</p>
-<p>device list</p>
-<p>station waln scan</p>
-<p>staion wlan get-networks</p>
-<p>station wlan connect wifi-ssid</p>
-<p>#dhcp</p>
-<p>cd /etc/iwd/main.conf</p>
-<p>[General]
-EnableNetworkConfiguration=true</p>
-<p>#dhcpcd</p>
-<p>dhcpcd &amp;</p>
-<p>##wsl</p>
-<p>wsl.exe &ndash;shutdown</p>
-<p>wsl &ndash;unregister arch #注销该子系统，这才是完全卸载</p>
-<p>#disk&amp;wifiutils cfdisk iwd</p>
-<p>timedatectl set-ntp true</p>
-<p>cfdisk</p>
-<p>mkfs.fat -F32 /dev/sda1</p>
-<p>mkfs.ext4 /dev/sda3</p>
-<p>mkswap /dev/sda2</p>
-<p>mount /dev/sda3 /mnt</p>
-<p>mkdir -p /mnt/boot/efi</p>
-<p>mount /dev/sda1 /mnt/boot/efi/</p>
-<p>swapon /dev/sda2</p>
-<p>pacstrap /mnt base linux linux-firmware sudo grub efibootmgr networkmanager intel-ucode neovim</p>
-<p>genfstab -U /mnt &raquo; /mnt/etc/fstab</p>
-<p>arch-chroot /mnt</p>
-<p>ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime</p>
-<p>hwclock &ndash;systohc</p>
-<p>nvim /etc/locale.gen</p>
-<p>locale-gen</p>
-<p>echo &ldquo;LANG=en_US.UTF-8&rdquo; &raquo; /etc/locale.conf</p>
-<p>systemctl enable NetworkManager</p>
-<p>useradd -m -G wheel vincent</p>
-<p>passwd</p>
-<p>#archutils stow fd ctags ripgrep tmux unzip npm lf lazygit yay feh nmap wget openssh neovim</p>
-<p>sudo passwd root</p>
-<p>su root</p>
-<p>cd /etc/</p>
-<p>#配置国内源pacman-key &ndash;init &amp;&amp; pacman-key &ndash;populate pacman -Sy archlinux-keyring &amp;&amp; pacman -Su</p>
-<p>echo &lsquo;Server = <a href="https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch'">https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch'</a> &gt; /etc/pacman.d/mirrorlist</p>
-<p>sudo pacman-key &ndash;lsign-key &ldquo;<a href="mailto:farseerfc@archlinux.org">farseerfc@archlinux.org</a>&rdquo; #本地信任farseerfc的GPG key</p>
-<p>sudo pacman-key &ndash;lsign-key &ldquo;<a href="mailto:lilac@build.archlinuxcn.org">lilac@build.archlinuxcn.org</a>&rdquo;  #本地信任lilac的GPG key</p>
-<p>sudo pacman -S zsh</p>
-<p>sudo chsh -s /bin/zsh vincent #改变vincent的shell #重启wsl后开代理</p>
-<p>sudo pacman -Syyu</p>
-<p>sudo pacman -S stow fd ctags ripgrep tmux unzip npm lf lazygit yay feh nmap wget openssh neovim github-cli git</p>
-<p>##git</p>
-<p>git clone <a href="https://github.com/zheshigewenti/dotfiles.git">https://github.com/zheshigewenti/dotfiles.git</a></p>
-<p>gh auth login #github-cli登录 注意保存github token</p>
-<p>git config &ndash;global user.name &ldquo;vincent&rdquo; #仓库内告知git用户为vincent</p>
-<p>##stow</p>
-<p>stow nvim #利用stow将nvim配置链接到.config文件夹下</p>
-<p>stow -D #取消相关软链接</p>
-<p>##tmux</p>
-<p>prefix键设置为C-a</p>
-<p>prefix-| 左右分终端</p>
-<p>prefix&ndash; 上下分终端</p>
-<p>prefix-d 分离当前终端</p>
-<p>prefix-s 打开终端列表</p>
-<p>prefix-x 关闭当前终端</p>
-<p>tmux a    #重新连接最近会话</p>
-<p>tmux a -t #重新连接托管会话</p>
-<p>tmux new -s #创建新会话会话</p>
-<p>##latex</p>
-<p>sudo pacman -S texlive-core texlive-langchinese</p>
-<p>##fonts</p>
-<p>noto-fonts</p>
-<p>noto-fonts-cjk-sans   # Google 中文黑体</p>
-<p>noto-fonts-cjk-serif  # Google 中文宋体</p>
-<p>noto-fonts-color-emoji</p>
-<p>gc #neovim快速标注</p>
-<p>grep -rn file #递归搜索文本且显示行数</p>
-<p>sed -i &rsquo;s/old/new/g&rsquo; file #全局替换文本</p>
-<p>:%/old/new/g #vim中全局替换文本</p>
-<p>sudo tshark -i wlp0s20f3 -w 1.pcap -c 50 #tshark抓包并保存到1.pcap</p>
-<p>tshark -r 1.pcap -T fields -e ip.dst | sort | uniq #过滤1.pcap中重复ip</p>
+                <pre tabindex="0"><code>##macos
+#安装homebrew
+/bin/bash -c &#34;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&#34;
+brew bundle dump      #从当前包生成Brewfile
+brew bundle dump -f   #覆盖当前Brewfile
+brew bundle           #安装Brewfile里所有包
 
+##iwd
+#wifi
+iwctl
+device list
+station &lt;waln&gt; scan
+staion &lt;wlan&gt; get-networks
+station &lt;wlan&gt; connect &lt;wifi-ssid&gt;
+#dhcp
+cd /etc/iwd/main.conf
+[General]
+EnableNetworkConfiguration=true
+#dhcpcd
+dhcpcd &amp;
+
+##wsl
+wsl.exe --shutdown
+wsl --unregister arch #注销该子系统，这才是完全卸载
+
+#disk&amp;wifiutils cfdisk iwd
+
+timedatectl set-ntp true
+cfdisk
+mkfs.fat -F32 /dev/sda1
+mkfs.ext4 /dev/sda3
+mkswap /dev/sda2
+mount /dev/sda3 /mnt
+mkdir -p /mnt/boot/efi
+mount /dev/sda1 /mnt/boot/efi/
+swapon /dev/sda2
+pacstrap /mnt base linux linux-firmware sudo grub efibootmgr networkmanager intel-ucode neovim
+genfstab -U /mnt &gt;&gt; /mnt/etc/fstab
+arch-chroot /mnt
+ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+hwclock --systohc
+nvim /etc/locale.gen
+locale-gen
+echo &#34;LANG=en_US.UTF-8&#34; &gt;&gt; /etc/locale.conf 
+systemctl enable NetworkManager
+useradd -m -G wheel vincent
+passwd
+
+#archutils stow fd ctags ripgrep tmux unzip npm lf lazygit yay feh nmap wget openssh neovim
+
+sudo passwd root
+su root
+cd /etc/
+# 配置清华源 出现问题可以重置包管理器密钥环pacman-key --init &amp;&amp; pacman-key --populate pacman -Sy archlinux-keyring &amp;&amp; pacman -Su
+echo &#39;Server = https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch&#39; &gt; /etc/pacman.d/mirrorlist
+sudo pacman-key --lsign-key &#34;farseerfc@archlinux.org&#34; #本地信任farseerfc的GPG key
+sudo pacman-key --lsign-key &#34;lilac@build.archlinuxcn.org&#34;  #本地信任lilac的GPG key
+sudo pacman -S zsh
+sudo chsh -s /bin/zsh vincent #改变vincent的shell #重启wsl后开代理
+sudo pacman -Syyu
+sudo pacman -S stow fd ctags ripgrep tmux unzip npm lf lazygit yay feh nmap wget openssh neovim github-cli git
+
+##git
+git clone https://github.com/zheshigewenti/dotfiles.git
+gh auth login #github-cli登录 注意保存github token
+git config --global user.name &#34;vincent&#34; #仓库内告知git用户为vincent
+
+##stow
+stow nvim #利用stow将nvim配置链接到.config文件夹下
+stow -D #取消相关软链接
+
+##tmux
+prefix键设置为C-a
+prefix-| 左右分终端
+prefix-- 上下分终端
+prefix-d 分离当前终端
+prefix-s 打开终端列表
+prefix-x 关闭当前终端
+tmux a    #重新连接最近会话
+tmux a -t #重新连接托管会话
+tmux new -s #创建新会话会话
+
+##latex
+sudo pacman -S texlive-core texlive-langchinese
+
+##fonts
+noto-fonts
+noto-fonts-cjk-sans   # Google 中文黑体
+noto-fonts-cjk-serif  # Google 中文宋体
+noto-fonts-color-emoji 
+
+gc #neovim快速标注
+grep -rn &lt;file&gt; #递归搜索文本且显示行数
+sed -i &#39;s/&lt;old&gt;/&lt;new&gt;/g&#39; &lt;file&gt; #全局替换文本
+:%/&lt;old&gt;/&lt;new&gt;/g #vim中全局替换文本
+sudo tshark -i wlp0s20f3 -w 1.pcap -c 50 #tshark抓包并保存到1.pcap
+tshark -r 1.pcap -T fields -e ip.dst | sort | uniq #过滤1.pcap中重复ip
+</code></pre>
             </div>
         </article>
     </main>

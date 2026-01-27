@@ -15,16 +15,17 @@
             <h2>Bandit</h2>
             <div class="meta" style="color: #888; margin-bottom: 1rem;">发布日期: 2026-01-26</div>
             <div class="post-content">
-                <p>ssh <a href="mailto:bandit8@bandit.labs.overthewire.org">bandit8@bandit.labs.overthewire.org</a> -p 2220</p>
-<p>find . -size 1033c</p>
-<p>find . -size 33c -user bandit7 -readable 2&gt;/dev/null   #屏蔽错误信息 1&gt;/dev/null屏蔽正确信息</p>
-<p>cat data.txt | grep millionth</p>
-<p>cat data.txt | sort | uniq -u #sort排序 uniq过滤重复 -u指定唯一</p>
-<p>strings data.txt | grep = #strings提取并显示长度超过4的人类可读字符串</p>
-<p>cat data.txt | base64 -d #base64 -d解码为人类可读数据</p>
-<p>cat data.txt | tr &lsquo;A-Za-z&rsquo; &lsquo;N-ZA-Mn-za-m&rsquo;</p>
-<p>7x16WNeHIi5YkIhWsfFIqoognUTyj9Q4</p>
+                <pre tabindex="0"><code>ssh bandit8@bandit.labs.overthewire.org -p 2220 
+find . -size 1033c
+find . -size 33c -user bandit7 -readable 2&gt;/dev/null   #屏蔽错误信息 1&gt;/dev/null屏蔽正确信息
+cat data.txt | grep millionth
+cat data.txt | sort | uniq -u #sort排序 uniq过滤重复 -u指定唯一
+strings data.txt | grep = #strings提取并显示长度超过4的人类可读字符串
+cat data.txt | base64 -d #base64 -d解码为人类可读数据
+cat data.txt | tr &#39;A-Za-z&#39; &#39;N-ZA-Mn-za-m&#39;
 
+7x16WNeHIi5YkIhWsfFIqoognUTyj9Q4
+</code></pre>
             </div>
         </article>
     </main>

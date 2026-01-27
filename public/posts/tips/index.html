@@ -25,9 +25,9 @@
 <p>#wifi</p>
 <p>iwctl</p>
 <p>device list</p>
-<p>station <!-- raw HTML omitted --> scan</p>
-<p>staion <!-- raw HTML omitted --> get-networks</p>
-<p>station <!-- raw HTML omitted --> connect <!-- raw HTML omitted --></p>
+<p>station waln scan</p>
+<p>staion wlan get-networks</p>
+<p>station wlan connect wifi-ssid</p>
 <p>#dhcp</p>
 <p>cd /etc/iwd/main.conf</p>
 <p>[General]
@@ -95,9 +95,9 @@ EnableNetworkConfiguration=true</p>
 <p>noto-fonts-cjk-serif  # Google 中文宋体</p>
 <p>noto-fonts-color-emoji</p>
 <p>gc #neovim快速标注</p>
-<p>grep -rn <!-- raw HTML omitted --> #递归搜索文本且显示行数</p>
-<p>sed -i &rsquo;s/<!-- raw HTML omitted -->/<!-- raw HTML omitted -->/g&rsquo; <!-- raw HTML omitted --> #全局替换文本</p>
-<p>:%/<!-- raw HTML omitted -->/<!-- raw HTML omitted -->/g #vim中全局替换文本</p>
+<p>grep -rn file #递归搜索文本且显示行数</p>
+<p>sed -i &rsquo;s/old/new/g&rsquo; file #全局替换文本</p>
+<p>:%/old/new/g #vim中全局替换文本</p>
 <p>sudo tshark -i wlp0s20f3 -w 1.pcap -c 50 #tshark抓包并保存到1.pcap</p>
 <p>tshark -r 1.pcap -T fields -e ip.dst | sort | uniq #过滤1.pcap中重复ip</p>
 
